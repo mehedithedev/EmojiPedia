@@ -1,26 +1,35 @@
-import React from "react";
+import React from 'react'
 import emojipedia from './components/emojipedia'
+import Entry from './components/Entry';
 
+const setEmoji=(singleEmoji)=>{
+  return(
+    <Entry
+      key={singleEmoji.id}
+      emoji={singleEmoji.emoji}
+      name={singleEmoji.name}
+      meaning={singleEmoji.meaning}
+    />
+  )
+}
 function App() {
   return (
     <div>
       <h1>
         <span>emojipedia</span>
       </h1>
-
+{/* 
       <dl className="dictionary">
         
         <div className="term">
           <dt>
             <span className="emoji" role="img" aria-label="Tense Biceps">
-              🙏
+              {emojipedia[1].emoji}
             </span>
-            <span>Person With Folded Hands</span>
+            <span>{emojipedia[1].name}</span>
           </dt>
           <dd>
-            Two hands pressed together. Is currently very introverted, saying a
-            prayer, or hoping for enlightenment. Is also used as a “high five”
-            or to say thank you.
+            {emojipedia[1].meaning}
           </dd>
         </div>
         <div className="term">
@@ -36,8 +45,10 @@ function App() {
             for „rolling on the floor, laughing“.
           </dd>
         </div>
-      </dl>
+      </dl> */}
+      {emojipedia.map(setEmoji)}
     </div>
+
   );
 }
 

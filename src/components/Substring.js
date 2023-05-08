@@ -25,11 +25,8 @@ const emojipedia = [
 
 
 
+const text= emojipedia.map((emojiEntry)=>{
+  return emojiEntry.meaning.substring(0,100)
+})
 
-
-
-
-
-
-  
-  export default emojipedia
+console.log(text)
